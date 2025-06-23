@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore thrilling white water rafting adventures with Benjamin Rafting. Choose from our exciting trips for all experience levels.">
+  <meta name="author" content="Benjamin Rafting Website">
+  <title>Adventure Trips | Benjamin Rafting</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* ===== GLOBAL STYLES ===== */
+    :root {
+      --primary: #1a6fb0;
+      --secondary: #1e3c72;
+      --accent: #ff6b35;
+      --light: #f5f7fa;
+      --dark: #2c3e50;
+      --text: #333;
+      --white: #ffffff;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--light);
+      overflow-x: hidden;
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s;
+    }
+    
+    h1, h2, h3, h4 {
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--white);
+      padding: 12px 25px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-align: center;
+      border: none;
+    }
+    
+    .btn:hover {
+      background: #e55a2a;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .section-title {
+      text-align: center;
+      color: var(--secondary);
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      position: relative;
+    }
+    
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: var(--accent);
+      margin: 15px auto 0;
+      border-radius: 2px;
+    }
+    
+    /* ===== HEADER WITH CSS GRID ===== */
+    header {
+      background: linear-gradient(135deg, var(--secondary), var(--primary));
+      padding: 15px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    
+    .header-container {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 30px;
+    }
+    
+    header img {
+      height: 60px;
+      transition: transform 0.3s;
+    }
+    
+    header img:hover {
+      transform: scale(1.05);
+    }
+    
+    nav ul {
+      display: flex;
+      justify-content: flex-end;
+      list-style: none;
+    }
+    
+    nav li {
+      margin-left: 20px;
+    }
+    
+    nav a {
+      color: var(--white);
+      font-weight: 600;
+      padding: 8px 15px;
+      border-radius: 4px;
+      transition: all 0.3s;
+    }
+    
+    nav a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    nav a.active {
+      background-color: var(--accent);
+    }
+    
+    /* ===== HERO SECTION ===== */
+    .hero {
+      position: relative;
+      height: 500px;
+      overflow: hidden;
+      margin-bottom: 40px;
+      border-radius: 0 0 10px 10px;
+    }
+    
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: zoomIn 15s infinite alternate;
+    }
+    
+    .hero-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: var(--white);
+      padding: 20px;
+    }
+    
+    .hero-content h1 {
+      font-size: 3.5rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      animation: fadeInDown 1s ease;
+      margin-bottom: 20px;
+    }
+    
+    .hero-content p {
+      font-size: 1.5rem;
+      max-width: 800px;
+      margin-bottom: 30px;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    }
+    
+    /* ===== TRIPS INTRODUCTION ===== */
+    .trips-intro {
+      padding: 60px 0;
+      text-align: center;
+      background-color: var(--white);
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      margin: 40px auto;
+    }
+    
+    .trips-intro p {
+      max-width: 800px;
+      margin: 0 auto 30px;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    
+    /* ===== FEATURED TRIPS SECTION ===== */
+    .featured-trips {
+      padding: 80px 0;
+    }
+    
+    .trip-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+    }
+    
+    .trip-card {
+      background: var(--white);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s;
+      position: relative;
+    }
+    
+    .trip-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    }
+    
+    .popular-badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--accent);
+      color: var(--white);
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      z-index: 10;
+    }
+    
+    .trip-image {
+      height: 300px;
+      overflow: hidden;
+    }
+    
+    .trip-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    
+    .trip-card:hover .trip-image img {
+      transform: scale(1.05);
+    }
+    
+    .trip-info {
+      padding: 25px;
+    }
+    
+    .trip-info h3 {
+      color: var(--primary);
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+    
+    .trip-meta {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+    }
+    
+    .meta-item {
+      text-align: center;
+      flex: 1;
+    }
+    
+    .meta-item i {
+      color: var(--accent);
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    
+    .trip-description {
+      margin-bottom: 25px;
+      line-height: 1.7;
+    }
+    
+    .trip-highlights {
+      margin-bottom: 25px;
+    }
+    
+    .trip-highlights h4 {
+      color: var(--secondary);
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .trip-highlights h4 i {
+      color: var(--accent);
+    }
+    
+    .trip-highlights ul {
+      padding-left: 20px;
+    }
+    
+    .trip-highlights li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 25px;
+    }
+    
+    .trip-highlights li::before {
+      content: "\f00c";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+    
+    .trip-price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--secondary);
+      text-align: center;
+      margin: 20px 0;
+    }
+    
+    .trip-price span {
+      font-size: 1rem;
+      font-weight: normal;
+      color: var(--text);
+    }
+    
+    .trip-booking {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+    }
+    
+    .trip-btn {
+      flex: 1;
+      text-align: center;
+      padding: 12px;
+    }
+    
+    .trip-btn.outline {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+    
+    .trip-btn.outline:hover {
+      background: var(--primary);
+      color: var(--white);
+    }
+    
+    /* ===== COMPARISON TABLE ===== */
+    .comparison-section {
+      padding: 80px 0;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: var(--white);
+    }
+    
+    .comparison-section .section-title {
+      color: var(--white);
+    }
+    
+    .table-container {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      overflow-x: auto;
+    }
+    
+    .trip-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    .trip-table th, .trip-table td {
+      padding: 15px;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .trip-table th {
+      background-color: var(--primary);
+      color: var(--white);
+      font-weight: 600;
+    }
+    
+    .trip-table tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    
+    .trip-table tr:hover {
+      background-color: #f0f8ff;
+    }
+    
+    .trip-table .popular {
+      position: relative;
+    }
+    
+    .trip-table .popular::after {
+      content: "MOST POPULAR";
+      position: absolute;
+      top: -10px;
+      right: 10px;
+      background: var(--accent);
+      color: var(--white);
+      font-size: 0.7rem;
+      padding: 3px 8px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+    
+    /* ===== CALL TO ACTION ===== */
+    .call-to-action {
+      padding: 80px 0;
+      background: var(--white);
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      margin: 40px auto;
+    }
+    
+    .call-to-action h2 {
+      font-size: 2.5rem;
+      color: var(--secondary);
+      margin-bottom: 20px;
+    }
+    
+    .call-to-action p {
+      max-width: 700px;
+      margin: 0 auto 30px;
+      font-size: 1.2rem;
+    }
+    
+    /* ===== FOOTER WITH SOCIAL ICONS ===== */
+    footer {
+      background: var(--dark);
+      color: var(--white);
+      padding: 60px 0 30px;
+      margin-top: 60px;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    
+    .footer-info h3 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: var(--accent);
+    }
+    
+    .footer-info p {
+      margin-bottom: 15px;
+      line-height: 1.8;
+    }
+    
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .social-icons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      transition: all 0.3s;
+    }
+    
+    .social-icons a:hover {
+      background: var(--accent);
+      transform: translateY(-3px);
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.9rem;
+    }
+    
+    .copyright a {
+      color: var(--accent);
+      transition: color 0.3s;
+    }
+    
+    .copyright a:hover {
+      color: var(--white);
+      text-decoration: underline;
+    }
+    
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes zoomIn {
+      from {
+        transform: scale(1);
+      }
+      to {
+        transform: scale(1.1);
+      }
+    }
+    
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 992px) {
+      .hero {
+        height: 400px;
+      }
+      
+      .hero-content h1 {
+        font-size: 3rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .header-container {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 15px;
+      }
+      
+      nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      
+      nav li {
+        margin: 5px;
+      }
+      
+      .hero {
+        height: 350px;
+      }
+      
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero-content p {
+        font-size: 1.2rem;
+      }
+      
+      .trip-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .trip-booking {
+        flex-direction: column;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .hero {
+        height: 300px;
+      }
+      
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .trip-meta {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with CSS Grid layout -->
+  <header>
+    <div class="container header-container">
+      <img src="image/Benjamin-Rafting-Website-logo.jpg" alt="Benjamin Rafting Website logo" />
+      <nav>
+        <ul class="navigation">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="trips.html" class="active">Trips</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero section -->
+  <section class="hero">
+    <img src="image/White-water-rafting-adventure.jpg" alt="White water rafting adventure" />
+    <div class="hero-content">
+      <h1>Unforgettable Rafting Adventures</h1>
+      <p>Choose your perfect adventure from our thrilling white water rafting trips</p>
+    </div>
+  </section>
+
+  <!-- Trips introduction -->
+  <section class="trips-intro">
+    <div class="container">
+      <h2 class="section-title">Our Adventure Trips</h2>
+      <p>At Benjamin Rafting, we offer a variety of trips designed for all experience levels. Whether you're a first-time rafter seeking a gentle float or an adrenaline junkie craving extreme rapids, we have the perfect adventure for you. All our trips include professional guides, top-quality equipment, and safety briefings to ensure an unforgettable experience.</p>
+      <p>Explore our featured trips below and find the one that matches your adventure spirit!</p>
+    </div>
+  </section>
+
+  <!-- Featured trips section -->
+  <section class="featured-trips">
+    <div class="container">
+      <div class="trip-grid">
+        <!-- Rapid Rush Adventure -->
+        <div class="trip-card">
+          <div class="trip-image">
+            <img src="image/Live the Rush rapids.jpg" alt="Rapid Rush Adventure">
+          </div>
+          <div class="trip-info">
+            <h3>Rapid Rush Adventure</h3>
+            <div class="trip-meta">
+              <div class="meta-item">
+                <i class="fas fa-clock"></i>
+                <p>4 hours</p>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-tachometer-alt"></i>
+                <p>Advanced</p>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-user-friends"></i>
+                <p>6-10 people</p>
+              </div>
+            </div>
+            <p class="trip-description">Conquer Class IV rapids in this half-day adventure perfect for adrenaline seekers. Navigate challenging drops and powerful currents under the guidance of our expert rafting professionals.</p>
+            <div class="trip-highlights">
+              <h4><i class="fas fa-star"></i> Trip Highlights</h4>
+              <ul>
+                <li>Thrilling Class IV rapids</li>
+                <li>Professional guide included</li>
+                <li>All safety equipment provided</li>
+                <li>Action photography package</li>
+                <li>Post-trip refreshments</li>
+              </ul>
+            </div>
+            <div class="trip-price">$120 <span>per person</span></div>
+            <div class="trip-booking">
+              <a href="contact.html" class="btn trip-btn">Book Now</a>
+              <a href="#" class="btn trip-btn outline">Details</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Family Float Fun -->
+        <div class="trip-card">
+          <div class="trip-image">
+            <img src="image/Family-Float-Fun.jpg" alt="Family Float Fun">
+          </div>
+          <div class="trip-info">
+            <h3>Family Float Fun</h3>
+            <div class="trip-meta">
+              <div class="meta-item">
+                <i class="fas fa-clock"></i>
+                <p>2 hours</p>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-tachometer-alt"></i>
+                <p>Beginner</p>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-user-friends"></i>
+                <p>4-8 people</p>
+              </div>
+            </div>
+            <p class="trip-description">A gentle ride ideal for families and beginners who want a safe, fun experience. Perfect for children ages 6 and up, with calm waters and beautiful scenery.</p>
+            <div class="trip-highlights">
+              <h4><i class="fas fa-star"></i> Trip Highlights</h4>
+              <ul>
+                <li>Kid-friendly guides</li>
+                <li>All safety equipment provided</li>
+                <li>Wildlife spotting opportunities</li>
+                <li>Complimentary snacks</li>
+                <li>Photo package available</li>
+              </ul>
+            </div>
+            <div class="trip-price">$65 <span>per person</span></div>
+            <div class="trip-booking">
+              <a href="contact.html" class="btn trip-btn">Book Now</a>
+              <a href="#" class="btn trip-btn outline">Details</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Wild Canyon Expedition -->
+        <div class="trip-card">
+          <div class="popular-badge">MOST POPULAR</div>
+          <div class="trip-image">
+            <img src="image/Wild-Canyon-Expedition.webp" alt="Wild Canyon Expedition">
+          </div>
+          <div class="trip-info">
+            <h3>Wild Canyon Expedition</h3>
+            <div class="trip-meta">
+              <div class="meta-item">
+                <i class="fas fa-clock"></i>
+                <p>8 hours</p>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-tachometer-alt"></i>
+                <p>Intermediate</p>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-user-friends"></i>
+                <p>4-8 people</p>
+              </div>
+            </div>
+            <p class="trip-description">A full-day rafting and hiking combo through scenic canyons with lunch included. Experience the best of wilderness adventure with Class III rapids and breathtaking landscapes.</p>
+            <div class="trip-highlights">
+              <h4><i class="fas fa-star"></i> Trip Highlights</h4>
+              <ul>
+                <li>Gourmet riverside lunch</li>
+                <li>Guided canyon hike</li>
+                <li>Professional photography</li>
+                <li>All equipment included</li>
+                <li>Wilderness survival demo</li>
+              </ul>
+            </div>
+            <div class="trip-price">$180 <span>per person</span></div>
+            <div class="trip-booking">
+              <a href="contact.html" class="btn trip-btn">Book Now</a>
+              <a href="#" class="btn trip-btn outline">Details</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Phone Journey -->
+        <div class="trip-card">
+          <div class="trip-image">
+            <img src="image/Phone-Journey.jpg" alt="Phone Journey">
+          </div>
+          <div class="trip-info">
+            <h3>Phone Journey</h3>
+            <div class="trip-meta">
+              <div class="meta-item">
+                <i class="fas fa-clock"></i>
+                <p>2 days</p>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-tachometer-alt"></i>
+                <p>Ad
